@@ -18,3 +18,6 @@ Pasos
 vite: url: https://vitejs.dev/guide/
 tailwind url: https://tailwindcss.com/docs/guides/vite
 tailwind url: https://tailwindcomponents.com/cheatsheet/
+* Creación de rutas y componentes
+  - Pages: Home, MyAccount, MyOrder, MyOrders, NotFound, SigIn
+  - 
