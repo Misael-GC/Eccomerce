@@ -11,3 +11,10 @@ Pasos
 
 * Instalación y configuración de vite v 4.1.0 y taildwind
 * 
+
+
+### Documentación
+* Configuración e instalación de vite y taildwind
+vite: url: https://vitejs.dev/guide/
+tailwind url: https://tailwindcss.com/docs/guides/vite
+tailwind url: https://tailwindcomponents.com/cheatsheet/
