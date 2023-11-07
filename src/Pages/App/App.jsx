@@ -11,10 +11,10 @@ import './App.css'
 const AppRoutes = ()=>{
   let routes = useRoutes([
     { path: '/', element: <Home /> },
-    { path: '/myaccount', element: <MyAccount />},
-    { path: '/myorder/:id?', element: <MyOrder/>},
-    { path: '/myorders', element: <MyOrders/>},
-    { path: '/signin', element: <SingIn/>},
+    { path: '/my-account', element: <MyAccount />},
+    { path: '/my-order', element: <MyOrder/>},
+    { path: '/my-orders', element: <MyOrders/>},
+    { path: '/sign-in', element: <SingIn/>},
     { path: '/*', element: <NotFound />}
   ])
   return routes

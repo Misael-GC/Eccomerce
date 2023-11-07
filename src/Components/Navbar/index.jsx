@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+// https://www.youtube.com/watch?v=yvOx2pEhCLs implementar el diseño responsive de este video
 
 function Navbar() {
   const activeStyle = "underline underline-offset-4";
   return (
-    <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm ">
+    <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm top-0">
       {/*puedes borrar font-light */}
       {/* Lado derecho */}
       <ul className="flex items-center gap-3">
@@ -93,7 +94,7 @@ function Navbar() {
         {/* other */}
         <li>
           <NavLink
-            to="/signin"
+            to="/sign-in"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Sign In
