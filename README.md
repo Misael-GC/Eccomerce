@@ -21,4 +21,5 @@ tailwind url: https://tailwindcomponents.com/cheatsheet/
 * Creación de rutas y componentes
   - Pages: Home, MyAccount, MyOrder, MyOrders, NotFound, SigIn
   - Instalación y uso de Enrutamiento con React Router DOM
-  - 
+  - Componente Layout: embolvover todos los componentes oara que tengan un solo estilo
+  -  Componente de Card estilos y componente
