@@ -23,4 +23,4 @@ tailwind url: https://tailwindcomponents.com/cheatsheet/
   - Instalación y uso de Enrutamiento con React Router DOM
   - Componente Layout: embolvover todos los componentes oara que tengan un solo estilo
   -  Componente de Card estilos y componente
-  -  Llamada a una API pública
+  -  Llamada a una API pública / uaeState y useEffect, como nota useEffect siempre acompañara a las API, 

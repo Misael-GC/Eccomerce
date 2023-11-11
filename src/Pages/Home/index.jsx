@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react';
 import Layout from '../../Components/Layout';
 import Card from '../../Components/Card';
+import { apiUrl } from'../../api/';
 
 function Home() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/products')
-    .then(res => res.json())
-    .then(data => setItems(data))
+    const fetchData = async()=>{
+      try {
+        const response = await fetch(`${apiUrl}/products`);
+        const data = await response.json();
+        setItems(data);
+      } catch (error) {
+        console.log(`Error 404 Not Found ${error}`)
+      }
+    }
+    fetchData();
   }, []);
 
   return (
