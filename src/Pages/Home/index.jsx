@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Layout from '../../Components/Layout';
 import Card from '../../Components/Card';
-import { apiUrl } from'../../api/';
+import { apiUrl } from '../../api/';
 
 function Home() {
   const [items, setItems] = useState([]);
