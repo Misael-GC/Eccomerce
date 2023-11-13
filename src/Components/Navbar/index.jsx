@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { ShoppingCartContext }  from '../../Context'
+import { ShoppingCartContext }  from '../../Context';
+import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 // https://www.youtube.com/watch?v=yvOx2pEhCLs implementar el diseño responsive de este video
 
 function Navbar() {
@@ -104,9 +105,12 @@ function Navbar() {
           </NavLink>
         </li>
         {/* other */}
-        <li>
-          <NavLink to="/fornitures">
-          🛒 {context.count}
+        <li className="flex">
+          <NavLink to="/fornitures" className="flex gap-1">
+           <ShoppingCartIcon className="h-5 w-5 text-black"/>
+           <div>
+           {context.count}
+           </div>
           </NavLink>
         </li>
       </ul>
