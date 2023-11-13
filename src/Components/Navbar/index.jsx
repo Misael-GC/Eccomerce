@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ShoppingCartContext }  from '../../Context'
 // https://www.youtube.com/watch?v=yvOx2pEhCLs implementar el diseño responsive de este video
 
 function Navbar() {
+  const context = useContext(ShoppingCartContext);
   const activeStyle = "underline underline-offset-4";
   return (
     <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm top-0">
@@ -102,7 +105,9 @@ function Navbar() {
         </li>
         {/* other */}
         <li>
-          <NavLink to="/fornitures">🛒0</NavLink>
+          <NavLink to="/fornitures">
+          🛒 {context.count}
+          </NavLink>
         </li>
       </ul>
     </nav>

@@ -4,7 +4,7 @@ import Card from '../../Components/Card';
 import { apiUrl } from '../../api/';
 
 function Home() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(null);
 
   useEffect(() => {
     const fetchData = async()=>{

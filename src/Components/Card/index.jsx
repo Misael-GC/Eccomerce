@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import { ShoppingCartContext }  from '../../Context'
 
 function Card(data) {
+  const context = useContext(ShoppingCartContext);
   return (
     <div className='bg-white cursor-pointer mb-20 w-56 h-60 rounded-lg '>
         <figure className='relative mb-2 w-full h-4/5'>
@@ -10,7 +12,9 @@ function Card(data) {
                 alt={data.data?.description}
                 className='w-full h-full object-cover rounded-lg '
             />
-            <div className='absolute top-0 right-0 flex justify-center items-center bg-slate-100/90 w-6 h-6 rounded-full m-2 p-1'>+</div>
+            <button className='absolute top-0 right-0 flex justify-center items-center bg-slate-100/90 w-6 h-6 rounded-full m-2 p-1'
+            onClick={()=> context.setCount(context.count + 1)}
+            >+</button>
         </figure>
         <p className='flex justify-between'>
             <span className='text-sm font-light'>{data.data?.title}</span>
