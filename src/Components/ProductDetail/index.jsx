@@ -18,7 +18,7 @@ function ProductDetail() {
       </button>
       </div>
       <figure className='h-3/5 px-6' >
-        <img className='w-full h-4/5 rounded-lg' 
+        <img className='w-full h-full object-contain rounded-lg' 
         src={context.productToShow.image} 
         alt={context.productToShow.title}/>
       </figure>
