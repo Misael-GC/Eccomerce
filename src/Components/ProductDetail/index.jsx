@@ -10,6 +10,7 @@ function ProductDetail() {
   return (
     <aside className={`${context.isProductDetailOpen ? 'flex' : 'hidden'} product-detail flex-col fixed right-0 border border-black rounded-lg bg-white z-20`}>
       <div className='flex justify-between items-center p-7'>
+      <h2 className='font-medium text-xl'>Detail</h2>
       <button>
         <XCircleIcon 
         className={`h-5 w-5 text-black cursor-pointer`}

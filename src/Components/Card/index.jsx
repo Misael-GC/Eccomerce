@@ -9,11 +9,15 @@ function Card(data) {
   const showProduct = (ProductDetail) =>{
     context.openProductDetail();
     context.setProductToShow(ProductDetail);
+    context.closeCheckoutSideMenu()
   }
 
-  const addProductsToCart = (productData) =>{
+  const addProductsToCart = (event, productData) =>{
+    event.stopPropagation();
     context.setCount(context.count + 1)
     context.setCartProducts([...context.cartProducts, productData])
+    context.openCheckoutSideMenu()
+    context.closeProductDetail()
     console.log(':0', context.cartProducts)
   }
 
@@ -30,7 +34,7 @@ function Card(data) {
                 className='w-full h-full object-contain rounded-lg '
             />
             <button className='absolute top-0 right-0 flex justify-center items-center bg-slate-100/90 w-7 h-7 rounded-full m-2 p-1'
-            onClick={() => addProductsToCart(data.data)}
+            onClick={(event) => addProductsToCart(event, data.data)}
             >
               <PlusCircleIcon className='w-6 h-6 text-black'/>
               {/* <CiSquarePlus className='w-7 h7' /> */}
