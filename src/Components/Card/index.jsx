@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import { PlusCircleIcon  } from '@heroicons/react/24/solid'
+import { PlusIcon, CheckIcon  } from '@heroicons/react/24/solid'
 import { ShoppingCartContext }  from '../../Context'
 //import { CiSquarePlus } from "react-icons/ci";
 
@@ -9,7 +9,7 @@ function Card(data) {
   const showProduct = (ProductDetail) =>{
     context.openProductDetail();
     context.setProductToShow(ProductDetail);
-    context.closeCheckoutSideMenu()
+   // context.closeCheckoutSideMenu()
   }
 
   const addProductsToCart = (event, productData) =>{
@@ -20,6 +20,30 @@ function Card(data) {
     context.closeProductDetail()
   }
 
+  const renderIcon = (id)=>{
+    const isInCart = context.cartProducts.filter(product => product.id ===id).length >0
+
+    if (isInCart) {
+      return(
+        <button className='absolute top-0 right-0 flex justify-center items-center bg-black w-5 h-5 rounded-full m-2 p-1'
+        >
+          <CheckIcon className='w-5 h-5 text-white'/>
+          {/* <CiSquarePlus className='w-7 h7' /> */}
+        </button>
+      )
+    } else {
+      return(
+        <button className='absolute top-0 right-0 flex justify-center items-center bg-slate-100/90 w-5 h-5 rounded-full m-2 p-1'
+        onClick={(event) => addProductsToCart(event, data.data)}
+        >
+          <PlusIcon className='w-6 h-6 text-black'/>
+          {/* <CiSquarePlus className='w-7 h7' /> */}
+        </button>
+      )
+    }
+
+
+  }
   return (
     <div
       className='bg-white cursor-pointer mb-32 w-56 h-60 rounded-lg '
@@ -32,12 +56,7 @@ function Card(data) {
                 alt={data.data?.description}
                 className='w-full h-full object-contain rounded-lg '
             />
-            <button className='absolute top-0 right-0 flex justify-center items-center bg-slate-100/90 w-7 h-7 rounded-full m-2 p-1'
-            onClick={(event) => addProductsToCart(event, data.data)}
-            >
-              <PlusCircleIcon className='w-6 h-6 text-black'/>
-              {/* <CiSquarePlus className='w-7 h7' /> */}
-            </button>
+            {renderIcon(data.data.id)}
         </figure>
         <p className='flex justify-between'>
             <span className='text-sm font-light truncate'>{data.data?.title}</span>

@@ -4,7 +4,6 @@ import { ShoppingCartContext }  from '../../Context'
 import OrderCard from '../../Components/OrderCard';
 import './styles.css';
 
-
 function CheckoutSideMenu() {
   const context = useContext(ShoppingCartContext);
   console.log(':0', context.cartProducts)
@@ -20,7 +19,7 @@ function CheckoutSideMenu() {
         />
       </button>
       </div>
-      <div className='px-6'>
+      <div className='px-6 overflow-y-scroll'>
       {
         context.cartProducts.map(product =>(
           <OrderCard
