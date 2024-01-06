@@ -109,7 +109,7 @@ function Navbar() {
           <NavLink to="/fornitures" className="flex gap-1">
            <ShoppingCartIcon className="h-5 w-5 text-black"/>
            <div>
-           {context.count}
+           {context.cartProducts.length} 
            </div>
           </NavLink>
         </li>
